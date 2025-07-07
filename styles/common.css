@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+@font-face {
+    font-family: 'SF Mono Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF Mono Regular'), url('../fonts/SFMonoRegular.woff') format('woff');
+}
+
+:root {
+    --bg-clr: #1E201E;
+    --dark-grey-clr: #697565;
+    --text-clr: #ECDFCC;
+}
+[data-theme="light"] {
+    --bg-clr: #ECDFCC;
+    --dark-grey-clr: #697565;
+    --text-clr: #1E201E;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #ECDFCC;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #ECDFCC;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #1E201E;
+    border: 2px solid #697565;
+}
+@supports (scrollbar-color: #1E201E #ECDFCC) {
+    * {
+        scrollbar-color: #1E201E #ECDFCC;
+        scrollbar-width: thin;
+        scrollbar-darkshadow-color: rgba(0,0,0,0.3);
+    }
+}
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+body {
+    background-color: var(--bg-clr);
+    color: var(--text-clr);
+    cursor: none;
+}
+
+/* Loading state - modified to preserve sticky positioning */
+body.loading {
+    overflow: hidden;
+    height: 100vh; /* Fix height during loading */
+}
+/* Instead of hiding elements, use a different approach */
+body.loading > *:not(.logo-container):not(.content-wrapper .theme-toggle):not(.content-wrapper .cursor-dot):not(.content-wrapper .cursor-circle) {
+    visibility: hidden; /* Use visibility instead of pointer-events */
+}
+body:not(.loading) > *:not(.logo-container):not(.theme-toggle) {
+    visibility: visible;
+    transition: visibility 0.1s, opacity 0.5s ease;
+}
+
+a {
+    font-family: 'SF Mono Regular';
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: .07em;
+    color: var(--dark-grey-clr);
+}
+h1 {
+    font-family: "Fira Code", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 8.2rem;
+    letter-spacing: .04em;
+    color: var(--dark-grey-clr);
+    text-transform: uppercase;
+}
+h2 {
+    font-family: "Inria Sans", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2rem;
+    color: var(--text-clr);
+}
+h3 {
+    font-family: "Inria Sans", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2rem;
+    color: var(--text-clr);
+}
+h4 {
+    font-family: 'SF Mono Regular';
+    font-weight: 300;
+    font-style: normal;
+    font-size: 0.8rem;
+    color: var(--text-clr);
+}
+h5 {
+    font-family: "Inria Sans", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 0.8rem;
+    color: var(--text-clr);
+}
+p {
+    font-family: "Inria Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--text-clr);
+    font-size: 1.1rem;
+}
+img:not(.slider-images .slider-img img):not(#home img):not(.bouncing-logo):not(.trail-logo) {
+    box-shadow: 3px 3px 8px rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 3.8rem;
+    }
+    h3 {
+        font-size: 0.8rem;
+    }
+    h4 {
+        font-size: 0.7rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    .bouncing-logo {
+        width: 150px !important;
+    }
+    .trail-logo {
+        width: 150px !important;
+    }
+}
+
+/* Bouncing logo */
+.bouncing-logo-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10000;
+    pointer-events: none;
+}
+.bouncing-logo {
+    position: absolute;
+    width: 200px;
+    z-index: 10;
+}
+.trail-logo {
+    position: absolute;
+    width: 200px;
+    opacity: 0.7;
+    pointer-events: none;
+}

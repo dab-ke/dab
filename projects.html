@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "letjK3jL-GqWj2FxW",
+            });
+        })();
+    </script>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+
+        <div class="theme-toggle">
+            <input type="checkbox" class="checkbox" id="checkbox" style="display: none; position: absolute;">
+            <div class="sun-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="5" class="sun-circle"/>
+                    <path d="M12 2V4M12 20V22M4 12H2M22 12H20M4.93 4.93L6.34 6.34M17.66 17.66L19.07 19.07M4.93 19.07L6.34 17.66M17.66 6.34L19.07 4.93" class="sun-rays"/>
+                </svg>
+            </div>
+            <div class="moon-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" class="moon-body"/>
+                </svg>
+            </div>
+        </div>
+
+        <a href="index.html" class="home-link">Home</a>
+
+        <div class="project-wrapper" id="projects">
+            <div class="project-content">
+                <!-- Project content -->
+            </div>
+
+            <div class="project-nav">
+                <div class="project-nav-item">
+                    <div class="project-nav-item-icon">
+                        <img src="https://res.cloudinary.com/dab2002/image/upload/v1749134308/vecteezy_arrow-pointer-icon-vector-design-template_11621788-removebg-preview_alf68d.png" alt="Previous">
+                    </div>
+                </div>
+                <div class="project-nav-item">
+                    <div class="project-nav-item-icon">
+                        <img src="https://res.cloudinary.com/dab2002/image/upload/v1749134308/vecteezy_arrow-pointer-icon-vector-design-template_11621788-removebg-preview_alf68d.png" alt="Next">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title" id="reach-out" style="height: 100vh;">
+            <h1 data-aos="slide-up">Reach<br>Out</h1>
+        </div>
+
+        <footer>
+            <div class="footer-wrapper">
+                <div class="contacts">
+                    <div class="social-links">
+                        <h3>Socials</h3>
+                        <div class="social-links-list">
+                            <a href="https://www.instagram.com/dab.ke/" target="_blank">:Instagram</a>
+                            <a href="https://discord.com/channels/@me" target="_blank">:Discord</a>
+                            <a href="https://www.linkedin.com/in/dab-immorah/" target="_blank">:LinkedIn</a>
+                            <a href="mailto:stevandabraham@gmail.com" target="_blank">:Email</a>
+                            <a href="https://www.behance.net/dabimmorah" target="_blank">:Behance</a>
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="fullName">Name:</label>
+                            <input type="text" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea name="message" id="message"></textarea>
+                        </div>
+                        <div class="button">
+                            <button type="submit" class="btn" onclick="sendMail()">Send</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <h3>Design & Development</h3>
+                    <h5>Dab Immorah</h5>
+                    <h5>&copy; Dab &#124; 2025</h5>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="js/jQuery.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+    AOS.init({
+        duration: 800,
+        easing: 'ease',
+        once: true,
+        offset: 100,
+        delay: 0
+    });
+    </script>
+</body>
+</html>
