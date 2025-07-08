@@ -10,8 +10,8 @@ function toggleOverlay() {
 }
 
 // cursor
-const cursorDot = document.querySelector(".cursor-dot");
-const cursorCircle = document.querySelector(".cursor-circle");
+const cursorDot = document.getElementById('cursorDot');
+const cursorCircle = document.getElementById('cursorCircle');
 
 document.addEventListener("mousemove", (e) => {
     gsap.to(cursorDot, {
