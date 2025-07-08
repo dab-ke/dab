@@ -66,7 +66,6 @@ body:not(.loading) .content-wrapper {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: absolute;
     padding: 4px;
-    backdrop-filter: blur(2px);
     border-radius: 50%;
 }
 .content-wrapper .theme-toggle svg:hover {
@@ -312,6 +311,7 @@ a:hover ~ .cursor-dot, a:hover ~ .cursor-circle {
 .selected-projects {
     position: sticky;
     top: 8vh;
+    z-index: 9;
 }
 .selected-projects h1, .modeling-projects h1 {
     text-align: left;
