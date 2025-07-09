@@ -220,10 +220,10 @@
                     </div>
                     <div class="square-text-wrapper">
                         <h3>Web Design/Development</h3>
-                        <h4>Web design 
-                            ........................................... $20</h4>
-                        <h4>Web development 
-                            ........................................... $30</h4>
+                        <h4>Web design<br>
+                            ........................................ $20</h4>
+                        <h4>Web development<br>
+                            ........................................ $30</h4>
                     </div>
                 </div>
     
@@ -233,10 +233,10 @@
                     </div>
                     <div class="square-text-wrapper">
                         <h3>Graphic Design</h3>
-                        <h4>Graphic design 
-                            ......................................... $10</h4>
-                        <h4>Brand identity 
-                            ......................................... $30</h4>
+                        <h4>Graphic design<br>
+                            ........................................ $10</h4>
+                        <h4>Brand identity<br>
+                            ........................................ $30</h4>
                     </div>
                 </div>
     
@@ -246,12 +246,12 @@
                     </div>
                     <div class="square-text-wrapper">
                         <h3>Creative Artist</h3>
-                        <h4>Story 
-                            .............................................. $5</h4>
-                        <h4>Static post 
-                            .............................................. $8</h4>
-                        <h4>Reel 
-                            .............................................. $10</h4>
+                        <h4>Story<br>
+                            ........................................ $5</h4>
+                        <h4>Static post<br>
+                            ........................................ $8</h4>
+                        <h4>Reel<br>
+                            ....................................... $10</h4>
                     </div>
                 </div>
             </div>
@@ -274,23 +274,25 @@
                             <a href="https://www.behance.net/dabimmorah" target="_blank">:Behance</a>
                         </div>
                     </div>
-                    <div class="form">
-                        <div class="form-group">
-                            <label for="fullName">Name:</label>
-                            <input type="text" id="name">
+                    <form id="contactForm">
+                        <div class="form">
+                            <div class="form-group">
+                                <label for="fullName">Name:</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message:</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <div class="button">
+                                <button type="submit" class="btn">Send</button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message:</label>
-                            <textarea name="message" id="message"></textarea>
-                        </div>
-                        <div class="button">
-                            <button type="submit" class="btn" onclick="sendMail()">Send</button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
                 <div class="copyright">
                     <h3>Design & Development</h3>

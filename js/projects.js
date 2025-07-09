@@ -57,6 +57,38 @@ function sendMail() {
         });
 }
 
+// form validation
+const form = document.getElementById('contactForm');
+if (form) {
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Always prevent default to control submission
+
+        const emailInput = document.getElementById('email');
+        const email = emailInput.value.trim();
+        const name = document.getElementById('name').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Improved email validation using regex
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!name) {
+            alert("Please enter your name");
+            return;
+        }
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address");
+            return;
+        }
+        if (!message) {
+            alert("Please enter your message");
+            return;
+        }
+
+        // If all validation passes, send the mail
+        sendMail();
+    });
+}
+
 // Custom alert function
 function showAlert(message, type = "success") {
     // create alert element
