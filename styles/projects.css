@@ -71,6 +71,12 @@
     overflow: hidden;
     transition: transform 0.3s ease;
 }
+.card-description {
+    position: relative;
+    max-width: 800px; 
+    text-align: center; 
+    margin: auto;
+}
 /* .card .parallax-img {
     transform-style: preserve-3d;
     backface-visibility: hidden;
@@ -217,8 +223,8 @@
     }
     
     .project-nav-item-icon {
-        width: 20px;
-        height: 20px;
+        width: 36px;
+        height: 36px;
     }
     
     .project-nav-item-title {
@@ -226,11 +232,11 @@
     }
     
     .project-nav-item:first-child .project-nav-item-title {
-        right: 30px;
+        right: 40px;
     }
     
     .project-nav-item:last-child .project-nav-item-title {
-        left: 30px;
+        left: 40px;
     }
 
     .project-nav-item:first-child:hover .project-nav-item-icon {

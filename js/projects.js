@@ -310,10 +310,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="card">
                     <img class="parallax-img" src="${project.image1}" alt="Project 1" loading="lazy">
                 </div>
-                <div class="card" style="max-width: 800px; text-align: center; margin: auto;">
+                <div class="card-description">
                     <p>${project.description}</p><br><br>
                     <p>${project.year}</p><br><br>
-                    <a href="${project.link}" target="_blank">Visit site</a>
+                    <a href="${project.link}" target="_blank" style="text-transform: uppercase;">Visit site</a>
                 </div>
                 <div class="card" >
                     <img class="parallax-img" src="${project.image2}" alt="Project 2" loading="lazy">
