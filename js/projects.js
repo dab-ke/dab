@@ -270,6 +270,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const project = window.projects[projectId];
         if (!project) return;
 
+        // Set the page title to 'Dab | <project name>'
+        document.title = `Dab | ${project.name}`;
+
         // Update the project content
         projectContent.innerHTML = `
             <div class="carousel-container">
@@ -304,7 +307,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
             <div class="image-container">
-                <div class="card" data-speed="0.1">
+                <div class="card">
                     <img class="parallax-img" src="${project.image1}" alt="Project 1" loading="lazy">
                 </div>
                 <div class="card" style="max-width: 800px; text-align: center; margin: auto;">
@@ -312,13 +315,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p>${project.year}</p><br><br>
                     <a href="${project.link}" target="_blank">Visit site</a>
                 </div>
-                <div class="card" data-speed="0.05">
+                <div class="card" >
                     <img class="parallax-img" src="${project.image2}" alt="Project 2" loading="lazy">
                 </div>
-                <div class="card" data-speed="0.1">
+                <div class="card">
                     <img class="parallax-img" src="${project.image3}" alt="Project 3" loading="lazy">
                 </div>
-                <div class="card" data-speed="0.05">
+                <div class="card" >
                     <img class="parallax-img" src="${project.image4}" alt="Project 4" loading="lazy">
                 </div>
             </div>
@@ -331,24 +334,24 @@ document.addEventListener('DOMContentLoaded', function() {
         const newCarouselTrack = projectContent.querySelector('.carousel-track');
         updateAnimation(newCarouselTrack);
 
-        const parallaxContainers = document.querySelectorAll('.card');
+        // const parallaxContainers = document.querySelectorAll('.card');
             
-        function handleScroll() {
-            parallaxContainers.forEach(container => {
-                const speed = parseFloat(container.getAttribute('data-speed'));
-                const rect = container.getBoundingClientRect();
-                const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        // function handleScroll() {
+        //     parallaxContainers.forEach(container => {
+        //         const speed = parseFloat(container.getAttribute('data-speed'));
+        //         const rect = container.getBoundingClientRect();
+        //         const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
                 
-                if (isVisible) {
-                    const yPos = (window.scrollY - rect.top + window.innerHeight) * -speed;
-                    const parallaxImg = container.querySelector('.parallax-img');
-                    parallaxImg.style.transform = `translateY(${yPos}px)`;
-                }
-            });
-        }
+        //         if (isVisible) {
+        //             const yPos = (window.scrollY - rect.top + window.innerHeight) * -speed;
+        //             const parallaxImg = container.querySelector('.parallax-img');
+        //             parallaxImg.style.transform = `translateY(${yPos}px)`;
+        //         }
+        //     });
+        // }
         
-        window.addEventListener('scroll', handleScroll);
-        handleScroll(); // Initialize positions
+        // window.addEventListener('scroll', handleScroll);
+        // handleScroll(); // Initialize positions
     }
     
     // Check if we're on the projects page and if there's a project ID in the URL
@@ -359,4 +362,15 @@ document.addEventListener('DOMContentLoaded', function() {
             loadProjectContent(projectId);
         }
     }
+
+    // Add popstate event listener to handle browser navigation
+    window.addEventListener('popstate', function(event) {
+        if (window.location.pathname.includes('projects.html')) {
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get('id');
+            if (projectId) {
+                loadProjectContent(projectId);
+            }
+        }
+    });
 });
