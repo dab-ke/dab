@@ -580,7 +580,7 @@ a:hover ~ .cursor-dot, a:hover ~ .cursor-circle {
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 480px) {
     .cursor-dot, .cursor-circle, .bouncing-logo-container {
         display: none !important;
     }
@@ -691,6 +691,87 @@ a:hover ~ .cursor-dot, a:hover ~ .cursor-circle {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+    }
+    .footer-wrapper .contacts .social-links a {
+        font-size: .78rem;
+    }
+}
+
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+    .cursor-dot, .cursor-circle, .bouncing-logo-container {
+        display: none !important;
+    }
+    .content-wrapper .theme-toggle {
+        left: 48%;
+    }
+    .overlay {
+        bottom: 20px;
+    }
+    .about p {
+        padding: 0 20px;
+    }
+    .slider-container {
+        margin-top: 150px;
+    }
+    .slider-images {
+        gap: 6px;
+        width: 90vw;
+    }
+    .slider-img {
+        height: 300px;
+        width: 70px;
+    }
+    .slider-images .slider-img h1 {
+        font-size: 1rem;
+        text-align: center;
+        top: 50%;
+        left: -350%;
+    }
+    .details {
+        bottom: 10px;
+        left: 20px;
+    }
+    .details h2 {
+        font-size: 1.4rem;
+        line-height: 18px;
+    }
+    .details p {
+        line-height: 30px;
+    }
+    .section-title {
+        margin-top: 80px;
+    }
+    .selected-projects {
+        top: 12vh;
+        width: 90vw;
+    }
+    .selected-projects h1, .modeling-projects h1 {
+        padding: 12px;
+    }
+    .projects .row {
+        padding-bottom: 20px;
+    }
+    .projects .row .project-thumbnail {
+        width: 300px;
+    }
+    .projects .row .project-thumbnail img {
+        height: auto;
+        width: 300px;
+    }
+    .squares-wrapper {
+        width: 90vw;
+    }
+    .squares-wrapper .squares {
+        margin-top: 0;
+    }
+    .square .square-text-wrapper {
+        padding: 8px;
+    }
+    .square .img-wrapper img {
+        height: 150px;
+    }
+    .footer-wrapper .contacts {
+        gap: 0;
     }
     .footer-wrapper .contacts .social-links a {
         font-size: .78rem;

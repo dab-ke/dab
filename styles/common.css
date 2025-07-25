@@ -124,12 +124,33 @@ img:not(.slider-images .slider-img img):not(#home img):not(.bouncing-logo):not(.
     box-shadow: 3px 3px 8px rgb(0, 0, 0);
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 480px) {
     h1 {
         font-size: 3.8rem;
     }
     h3 {
         font-size: 0.8rem;
+    }
+    h4 {
+        font-size: 0.7rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    .bouncing-logo {
+        width: 150px !important;
+    }
+    .trail-logo {
+        width: 150px !important;
+    }
+}
+
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+    h1 {
+        font-size: 5rem;
+    }
+    h3 {
+        font-size: 1rem;
     }
     h4 {
         font-size: 0.7rem;
