@@ -126,7 +126,7 @@ img:not(.slider-images .slider-img img):not(#home img):not(.bouncing-logo):not(.
 
 @media only screen and (max-width: 480px) {
     h1 {
-        font-size: 3.8rem;
+        font-size: 3.4rem;
     }
     h3 {
         font-size: 0.8rem;
