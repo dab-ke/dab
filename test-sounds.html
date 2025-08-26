@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Effects Test - Dab</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .test-button:hover {
+            background: #0056b3;
+        }
+        .test-link {
+            color: #007bff;
+            text-decoration: none;
+            margin: 5px 10px;
+            display: inline-block;
+        }
+        .test-link:hover {
+            text-decoration: underline;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .status.warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sound Effects Test Page</h1>
+    
+    <div class="test-section">
+        <h2>Sound Status</h2>
+        <div id="soundStatus" class="status warning">
+            Checking sound files...
+        </div>
+        <p>This page helps you test the sound effects functionality before adding actual audio files.</p>
+    </div>
+
+    <div class="test-section">
+        <h2>Test Interactive Elements</h2>
+        <p>Hover over and click these elements to test sound effects:</p>
+        
+        <h3>Buttons</h3>
+        <button class="test-button">Test Button 1</button>
+        <button class="test-button">Test Button 2</button>
+        <button class="test-button">Test Button 3</button>
+        
+        <h3>Links</h3>
+        <a href="#" class="test-link">Test Link 1</a>
+        <a href="#" class="test-link">Test Link 2</a>
+        <a href="#" class="test-link">Test Link 3</a>
+        
+        <h3>Form Elements</h3>
+        <input type="text" placeholder="Test input" style="padding: 8px; margin: 5px;">
+        <input type="submit" value="Test Submit" class="test-button">
+    </div>
+
+    <div class="test-section">
+        <h2>Instructions</h2>
+        <ol>
+            <li>Check the sound status above</li>
+            <li>Hover over buttons and links (should play camera-tap.mp3)</li>
+            <li>Click on buttons and links (should play camera-click.mp3)</li>
+            <li>Navigate between index.html and projects.html via links (should play camera-capture.mp3)</li>
+            <li>Add your audio files to the <code>sounds/</code> directory</li>
+        </ol>
+    </div>
+
+    <div class="test-section">
+        <h2>Required Audio Files</h2>
+        <ul>
+            <li><strong>camera-tap.mp3</strong> - For hover effects</li>
+            <li><strong>camera-click.mp3</strong> - For click effects</li>
+            <li><strong>camera-capture.mp3</strong> - For navigation between pages</li>
+        </ul>
+        <p>Place these files in the <code>sounds/</code> directory of your project.</p>
+    </div>
+
+    <script src="js/sound-effects.js"></script>
+    <script>
+        // Test sound file availability
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusDiv = document.getElementById('soundStatus');
+            
+            // Check if sound files exist
+            fetch('sounds/camera-tap.mp3', { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        return fetch('sounds/camera-click.mp3', { method: 'HEAD' });
+                    } else {
+                        throw new Error('camera-tap.mp3 not found');
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        return fetch('sounds/camera-capture.mp3', { method: 'HEAD' });
+                    } else {
+                        throw new Error('camera-click.mp3 not found');
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        statusDiv.className = 'status success';
+                        statusDiv.textContent = '✅ Sound files found! Sound effects should work.';
+                    } else {
+                        throw new Error('camera-capture.mp3 not found');
+                    }
+                })
+                .catch(error => {
+                    statusDiv.className = 'status error';
+                    statusDiv.textContent = '❌ Sound files missing. Please add camera-tap.mp3, camera-click.mp3 and camera-capture.mp3 to the sounds/ directory.';
+                });
+        });
+    </script>
+</body>
+</html>
