@@ -373,7 +373,7 @@ function animate() {
     // Create trail elements
     if (frameCount % trailCreationDelay === 0) {
         const trailLogo = document.createElement('img');
-        trailLogo.src = 'https://res.cloudinary.com/dab2002/image/upload/v1747759819/dab_white_iighva.png';
+        trailLogo.src = 'https://res.cloudinary.com/dab2002/image/upload/f_auto,q_auto/v1758364052/dab_white-outlined_grnre7.png';
         trailLogo.alt = 'Logo Trail';
         trailLogo.classList.add('trail-logo');
         
