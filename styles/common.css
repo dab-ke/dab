@@ -8,14 +8,14 @@
 }
 
 :root {
-    --bg-clr: #1E201E;
+    --bg-clr: #14130A;
     --dark-grey-clr: #697565;
-    --text-clr: #ECDFCC;
+    --text-clr: #EACEAA;
 }
 [data-theme="light"] {
-    --bg-clr: #ECDFCC;
+    --bg-clr: #EACEAA;
     --dark-grey-clr: #697565;
-    --text-clr: #1E201E;
+    --text-clr: #14130A;
 }
 * {
     margin: 0;
@@ -27,19 +27,19 @@
 }
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: #ECDFCC;
+    background-color: #EACEAA;
 }
 ::-webkit-scrollbar {
     width: 10px;
-    background-color: #ECDFCC;
+    background-color: #EACEAA;
 }
 ::-webkit-scrollbar-thumb {
     background-color: #1E201E;
     border: 2px solid #697565;
 }
-@supports (scrollbar-color: #1E201E #ECDFCC) {
+@supports (scrollbar-color: #1E201E #EACEAA) {
     * {
-        scrollbar-color: #1E201E #ECDFCC;
+        scrollbar-color: #1E201E #EACEAA;
         scrollbar-width: thin;
         scrollbar-darkshadow-color: rgba(0,0,0,0.3);
     }
